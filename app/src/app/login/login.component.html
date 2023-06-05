@@ -7,11 +7,17 @@
     <title>Document</title>
 </head>
 <body>
-    <input #name placeholder="Nombre">
-    <input #password placeholder="Contraseña" type="password">
-    <button (click)="registrarse(name.value, password.value)">Registrarse</button>
-    <a routerLink="/login">ya tene cuenta pa?</a>
-    
+    <div class="login-container">
+        <div class="login">
+            <p id="title">Inicio de sesión</p>
+            <input #name id="name" placeholder="Nombre">
+            <input #password id="password" placeholder="Contraseña" type="password">
+            <button (click)="IniciarSesion(name.value, password.value)" id="btn">Iniciar Sesión</button>
+            <a id="link" routerLink="/register">¿No tenés cuenta?</a>
+            
+        </div>
+    </div>
+        
 
 </body>
 </html>

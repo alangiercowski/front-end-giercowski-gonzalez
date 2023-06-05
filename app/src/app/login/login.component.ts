@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { NonNullableFormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -7,23 +6,14 @@ import { NonNullableFormBuilder } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
- 
-numero: number
-
- constructor(){
-  this.numero = 0;
- }
-
-public registrarse(nombre: string, contraseña: string){
-  const url = "http://localhost:3000/users/register"
+  public IniciarSesion(nombre: string, contraseña: string){
+    const url = "http://localhost:3000/users/login"
   
   var datos = {
       nombre: nombre,
       passwordhash: contraseña
     }
     
-
-
   fetch(url, {
     method: "POST",
     headers: {
@@ -31,11 +21,11 @@ public registrarse(nombre: string, contraseña: string){
     },
     body: JSON.stringify(datos),
     mode: "cors"
-  })
-  .then(response => response)
-  .then(data => console.log(data));
-  
-  console.log(nombre + " " + contraseña)
+  }).then(function (response) {
+    response.json().then(function (data) {
+      console.log(JSON.stringify(data));
+    })
+  });
+  }
 }
- 
-}
+

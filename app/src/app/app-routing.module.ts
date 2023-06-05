@@ -10,11 +10,11 @@ const routes: Routes = [{
     title: 'app' 
 },{
   path: 'register',
-  component: LoginComponent,
+  component: RegisterComponent,
   title: 'Registrarse' 
 },{
   path: 'login',
-  component: RegisterComponent,
+  component: LoginComponent,
   title: 'Iniciar sesión'
 }];
 
