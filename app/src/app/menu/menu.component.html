@@ -1,13 +1,16 @@
 <div id="no_me_la_container">
     <div id="menu">
-        <p>Menu</p>
+        <p>Menú </p>
         <div class="m1">
-            <button class="botonIzquierda" routerLink="/register">Registrarse</button>
-            <button routerLink="/login">Iniciar sesión</button>
+            <button *ngIf = "cs" (click)="cerrarSesion()" >Cerrar sesión</button>
+        </div>
+        <div class="m1">
+            <button *ngIf = "registro" class="botonIzquierda" routerLink="/register">Registrarse</button>
+            <button *ngIf = "login" routerLink="/login">Iniciar sesión</button>
         </div>
         <div class="m2">
-            <button class="botonIzquierda" routerLink="/alumnos">Alumnos</button>
-            <button routerLink="/materias">Materias</button>
+            <button *ngIf = "alumnos" class="botonIzquierda" routerLink="/alumnos">Alumnos</button>
+            <button *ngIf = "materias" routerLink="/materias">Materias</button>
         </div>
     </div>
 </div>

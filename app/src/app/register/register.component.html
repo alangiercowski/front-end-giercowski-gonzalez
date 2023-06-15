@@ -14,6 +14,7 @@
             <input #name id="name" placeholder="Nombre">
             <input #password id="password" placeholder="Contraseña" type="password">
             <button (click)="registrarse(name.value, password.value)" id="btn">Registrarse</button>
+            <p style="color: red;">{{error}}</p>
             <a id="link" routerLink="/login">¿Ya tenés cuenta?</a>
         </div>
         

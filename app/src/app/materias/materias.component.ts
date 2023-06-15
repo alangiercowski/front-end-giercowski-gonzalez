@@ -1,48 +1,63 @@
-import { Component } from '@angular/core';
-
+import { Component, Injectable } from '@angular/core';
+import { NonNullableFormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 @Component({
   selector: 'app-materias',
   templateUrl: './materias.component.html',
   styleUrls: ['./materias.component.css']
 })
 export class MateriasComponent {
-  public crearMateria(nombreMateria: string) {
-    const url = "http://localhost:3000/materias"
+  url = "http://localhost:3000/materias"
+  constructor(private http: HttpClient, private router: Router) { }
 
-    var datos = {
+  public crearMateria(nombreMateria: string) {
+
+
+    var body = {
       nombre: nombreMateria
     }
-
-    var jwt = localStorage.getItem("jwt")?.toString()
-    console.log(jwt)
-
-    fetch(url, {
-      method: "POST",
-      headers: <any> {
-        "a</div></div>uthorization": jwt,
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(datos),
-      mode: "cors"
+    var headers = new HttpHeaders({
+      'Authorization': `Bearer ${localStorage.getItem("jwt")}`
     })
-      .then(response => response)
-      .then(data => console.log(data));
+    return this.http.post(this.url, body, { headers }).subscribe({
+      next: (data) => {
+        console.log("a")
+        console.log(data)
+      },
+      error: (error) => {
+        console.log("b")
+        console.log(error)
 
-    console.log(nombreMateria)
+      }
+    });
   }
 
-  public borrarMateria(id: string){
+  public borrarMateria(id: string) {
     var idInt = parseInt(id)
     console.log("referencia 3")
   }
 
-  public mostrarMateria(id: string){
+  public mostrarMateria(id: string) {
     var idInt = parseInt(id)
     console.log("STOP! YOU VIOLATED THE LAW! PAY THE COURT A FINE OR SERVE YOUR SENTENCE! YOUR STOLEN GOODS ARE NOW FORFEIT.")
   }
 
-  public mostrarMaterias(){
-    console.log("welcome, to oblivion")
+  public mostrarMaterias() {
+    var headers = new HttpHeaders({
+      'Authorization': `Bearer ${localStorage.getItem("jwt")}`
+    })
+    return this.http.get(this.url, { headers }).subscribe({
+      next: (data) => {
+        console.log("a")
+        console.log(data)
+      },
+      error: (error) => {
+        console.log("b")
+        console.log(error)
+
+      }
+    });
   }
 
 }

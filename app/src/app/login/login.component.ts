@@ -1,32 +1,43 @@
-import { Component } from '@angular/core';
-
+import { Component, Injectable } from '@angular/core';
+import { NonNullableFormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+@Injectable()
 export class LoginComponent {
-  public IniciarSesion(nombre: string, contraseña: string){
+
+  error: String
+
+  constructor(private http: HttpClient, private router: Router) {
+    this.error = ""
+  }
+
+  public IniciarSesion(nombre: string, contraseña: string) {
     const url = "http://localhost:3000/users/login"
-  
-  var datos = {
+
+    var datos = {
       nombre: nombre,
       passwordhash: contraseña
     }
-    
-  fetch(url, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(datos),
-    mode: "cors"
-  }).then(function (response) {
-    response.json().then(function (data) {
-      console.log(JSON.stringify(data));
-      localStorage.setItem("jwt", JSON.stringify(data))
-    })
-  });
+
+    return this.http.post(url, datos).subscribe({
+      next: (data) => {
+        this.error = ""
+        localStorage.setItem("jwt", JSON.stringify(data))
+        console.log(localStorage.getItem("jwt"))
+        this.router.navigate(["/menu"])
+      },
+      error: (error) => {
+        console.log(error)
+        this.error = "La constraseña es incorrecta"
+      }
+    });
+
+
   }
 }
 

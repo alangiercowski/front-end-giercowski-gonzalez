@@ -1,46 +1,40 @@
-import { Component } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
 import { NonNullableFormBuilder } from '@angular/forms';
+import { Router } from '@angular/router';
 import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
+
+
+
+@Injectable()
 export class RegisterComponent {
- 
-numero: number
+  error: String
 
- constructor(){
-  this.numero = 0;
- }
+  url = "http://localhost:3000/users/register"
 
-public registrarse(nombre: string, contraseña: string){
+  constructor(private http: HttpClient, private router: Router) {
+    this.error = ""
+  }
 
-
-
-  const url = "http://localhost:3000/users/register"
-  
-  /*
-  var datos = {
-      nombre: nombre,
-      passwordhash: contraseña
-    }
-    
-
-
-  fetch(url, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(datos),
-    mode: "cors"
-  })
-  .then(response => response)
-  .then(data => console.log(data));
-  
-  console.log(nombre + " " + contraseña)
-  */
+  registrarse(nombre: string, constraseña: string) {
+    return this.http.post(this.url, {
+      "nombre": nombre,
+      "passwordhash": constraseña
+    }).subscribe({
+      next: (data) => {
+        console.log(data)
+        this.router.navigate(["/login"]);
+      },
+      error: (error) => {
+        console.log(error)
+        this.error = "El nombre de usuario ya esta en uso"
+        
+      }
+    });
+  }
 }
 
-}
