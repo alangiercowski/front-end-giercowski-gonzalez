@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NonNullableFormBuilder } from '@angular/forms';
-
+import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -15,8 +15,12 @@ numero: number
  }
 
 public registrarse(nombre: string, contraseña: string){
+
+
+
   const url = "http://localhost:3000/users/register"
   
+  /*
   var datos = {
       nombre: nombre,
       passwordhash: contraseña
@@ -36,6 +40,7 @@ public registrarse(nombre: string, contraseña: string){
   .then(data => console.log(data));
   
   console.log(nombre + " " + contraseña)
+  */
 }
- 
+
 }

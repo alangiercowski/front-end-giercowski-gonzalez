@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { MateriasComponent } from './materias/materias.component';
+import { MenuComponent } from './menu/menu.component';
 
 const routes: Routes = [{
     path: ' ' ,
@@ -16,6 +18,16 @@ const routes: Routes = [{
   path: 'login',
   component: LoginComponent,
   title: 'Iniciar sesión'
+},
+{
+  path: 'materias',
+  component: MateriasComponent,
+  title: 'Materias'
+},
+{
+  path: 'menu',
+  component: MenuComponent,
+  title: 'Menu'
 }];
 
 @NgModule({

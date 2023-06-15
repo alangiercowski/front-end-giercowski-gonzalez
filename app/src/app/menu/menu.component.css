@@ -1,14 +1,18 @@
 body{
     font-family: 'Montserrat', sans-serif;
 }
-.register-container {
+#no_me_la_container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 50vh;
 }
 
-.register{
+.botonIzquierda {
+    margin-right: 5vw;
+}
+
+#menu{
     margin: auto;
     display: grid ;
     place-items: center;
@@ -18,30 +22,10 @@ body{
 
     color: #333;
 }
-#name,#password{
-    height: 7.5vh;
-    width: 30vw;
-    margin-bottom: 5vh;
-    border-radius: 20px;
-}
-#title{
+p{
     font-size: xx-large;
 }
-#btn-menu{
-    border-radius: 20px;
-    transition: ease-in-out .3s;
-    background-color: white;
-    height: 5vh;
-    width: 5vw;
-}
-#btn-menu:hover{
-    color: white;
-    background-color: black;
-    transition: ease-in-out .3s;
-    cursor: pointer;
-}
-
-#btn{
+button{
     height: 7.5vh;
     width: 20vw;
     font-size: 1.3vw;
@@ -50,15 +34,9 @@ body{
     margin-bottom: 5vh;
     background-color: white;
 }
-#btn:hover{
+button:hover{
     color: white;
     background-color: black;
     transition: ease-in-out .3s;
     cursor: pointer;
-}
-#link{
-    text-decoration: none;
-    color: black;
-  
-    text-shadow: 0 0 3px #000000;
 }

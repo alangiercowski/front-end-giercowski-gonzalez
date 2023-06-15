@@ -24,6 +24,7 @@ export class LoginComponent {
   }).then(function (response) {
     response.json().then(function (data) {
       console.log(JSON.stringify(data));
+      localStorage.setItem("jwt", JSON.stringify(data))
     })
   });
   }
