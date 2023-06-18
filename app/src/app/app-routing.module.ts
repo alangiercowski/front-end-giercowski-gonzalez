@@ -5,6 +5,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { MateriasComponent } from './materias/materias.component';
 import { MenuComponent } from './menu/menu.component';
+import { AlumnosComponent } from './alumnos/alumnos.component';
+import { MasComponent } from './mas/mas.component';
 
 const routes: Routes = [{
     path: ' ' ,
@@ -28,6 +30,16 @@ const routes: Routes = [{
   path: 'menu',
   component: MenuComponent,
   title: 'Menu'
+},
+{
+  path: 'alumnos',
+  component: AlumnosComponent,
+  title: 'Alumnos'
+},
+{
+  path: 'mas',
+  component: MasComponent,
+  title: 'mas'
 }];
 
 @NgModule({

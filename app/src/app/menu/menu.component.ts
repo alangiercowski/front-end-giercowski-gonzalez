@@ -34,7 +34,7 @@ export class MenuComponent {
   cerrarSesion() {
     localStorage["jwt"] = ""
     this.router.navigate(["/menu"])
-    location.reload()
+    location.reload()//a
   }
 
 }

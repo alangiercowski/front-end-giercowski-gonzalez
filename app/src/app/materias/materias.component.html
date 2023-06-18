@@ -13,16 +13,28 @@
             <p>Crear una materia</p>
             <input placeholder="Nombre de la materia" #materias class="input-materias">
             <button (click)="crearMateria(materias.value)" class="btn-materias">Crear materia</button>
+            <p style="color: rgb(7, 181, 7);">{{avisoCrear}}</p>
+
             <p>Borrar materia</p>
             <input placeholder="Id de la materia" #materias2 class="input-materias" type="number">
             <button (click)="borrarMateria(materias2.value)" class="btn-materias">Borrar materia</button>
+            <p style="color: rgb(7, 181, 7);">{{avisoBorrar}}</p>
+
             <p>Mostrar materia según id</p>
             <input placeholder="Id de la materia" #materias3 class="input-materias" type="number">
             <button (click)="mostrarMateria(materias3.value)" class="btn-materias">Mostrar materia</button>
-            <p id="materiaSegunId"></p>
+            <p style="color: red;">{{error}}</p>
+            <p id="materiaSegunId">{{materia}}</p>
+
             <p>Mostrar todas las materias</p>
             <button (click)="mostrarMaterias()" class="btn-materias">Mostrar materias</button>
-            <p id="materias4"></p>
+            <p id="materias4">{{materias}}</p>
+            
+            <p>Modificar materia según id</p>
+            <input placeholder="Id de la materia" #materias4 class="input-materias" type="number">
+            <input placeholder="Nombre nuevo de la materia" #materias5 class="input-materias" type="text">
+            <button (click) = "modificarMateria(materias4.value, materias5.value)" class="btn-materias">Modificar materia</button>
+            <p>{{avisoModificar}}</p>
         </div>
     </div>
     

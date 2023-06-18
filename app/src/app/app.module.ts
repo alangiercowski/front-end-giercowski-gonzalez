@@ -8,6 +8,8 @@ import { RegisterComponent } from './register/register.component';
 import { MateriasComponent } from './materias/materias.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MenuComponent } from './menu/menu.component';
+import { AlumnosComponent } from './alumnos/alumnos.component';
+import { MasComponent } from './mas/mas.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { MenuComponent } from './menu/menu.component';
     LoginComponent,
     RegisterComponent,
     MateriasComponent,
-    MenuComponent
+    MenuComponent,
+    AlumnosComponent,
+    MasComponent
   ],
   imports: [
     BrowserModule,

@@ -25,13 +25,13 @@ export class LoginComponent {
     }
 
     return this.http.post(url, datos).subscribe({
-      next: (data) => {
+      next: (data: any) => {
         this.error = ""
         localStorage.setItem("jwt", JSON.stringify(data))
         console.log(localStorage.getItem("jwt"))
         this.router.navigate(["/menu"])
       },
-      error: (error) => {
+      error: (error: any) => {
         console.log(error)
         this.error = "La constraseña es incorrecta"
       }

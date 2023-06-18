@@ -1,0 +1,33 @@
+<body>
+    <button id="btn-menu" routerLink="/menu">Menu</button>
+    <div class="alumnos-container">
+        <div class="alumnos">
+            <p>Agregar un alumno</p>
+            <input placeholder="Nombre del alumno" #alumno class="input-alumnos">
+            <button (click)="crearAlumno(alumno.value)" class="btn-alumnos">agregar alumno</button>
+            <p style="color: rgb(7, 181, 7);">{{avisoCrear}}</p>
+
+            <p>Borrar un alumno</p>
+            <input placeholder="Id del alumno" #alumno2 class="input-alumnos" type="number">
+            <button (click)="borrarAlumno(alumno2.value)" class="btn-alumnos">Borrar alumno</button>
+            <p style="color: rgb(7, 181, 7);">{{avisoBorrar}}</p>
+
+            <p>Mostrar alumno según id</p>
+            <input placeholder="Id del alumno" #alumno3 class="input-alumnos" type="number">
+            <button (click)="mostrarAlumno(alumno3.value)" class="btn-alumnos">Mostrar alumno</button>
+            <p style="color: red;">{{error}}</p>
+            <p>{{alumno}}</p>
+
+            <p>Mostrar todos los alumnos</p>
+            <button (click)="mostrarAlumnos()" class="btn-alumnos">Mostrar alumnos</button>
+            <p>{{alumnos}}</p>
+
+            <p>Modificar alumnos según id</p>
+            <input placeholder="Id del alumno" #alumno4 class="input-alumnos" type="number">
+            <input placeholder="nombre nuevo del alumno" #alumno5 class="input-alumnos" type="text">
+            <button (click) = "modificarAlumno(alumno4.value, alumno5.value)" class="btn-alumnos">Modificar alumno</button>
+            <p>{{avisoModificar}}</p>
+        </div>
+    </div>
+    
+</body>

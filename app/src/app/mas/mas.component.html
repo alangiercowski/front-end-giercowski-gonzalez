@@ -1,0 +1,25 @@
+<body>
+    <button id="btn-menu" routerLink="/menu">Menu</button>
+    <div class="mas-container">
+        <div class="mas">
+            <p>Anotar alumno en una materia</p>
+            <input placeholder="Id de la materia" #mas class="input-mas">
+            <input placeholder="Id del alumno" #mas2 class="input-mas">
+            <button (click)="anotarAlumno(mas2.value, mas.value)" class="btn-mas">Crear materia</button>
+            <p style="color: rgb(7, 181, 7);">{{avisoAnotar}}</p>
+
+            <p>Subir una nota a un alumno</p>
+            <input placeholder="Id de la materia" #mas3 class="input-mas" type="number">
+            <input placeholder="Id del alumno" #mas4 class="input-mas" type="number">
+            <input placeholder="Nota" #mas5 class="input-mas" type="number">
+            <button (click)="subirNota(mas3.value, mas4.value, mas5.value)" class="btn-mas">Subir nota</button>
+            <p style="color: rgb(7, 181, 7);">{{avisoNota}}</p>
+
+            <p>Mostrar notas de un alumno</p>
+            <input placeholder="Id del alumno" #mas6 class="input-mas" type="number">
+            <button (click)="mostrarNotas(mas6.value)" class="btn-mas">Mostrar notas</button>
+            <p style="color: red;">{{notas}}</p>
+        </div>
+    </div>
+    
+</body>
