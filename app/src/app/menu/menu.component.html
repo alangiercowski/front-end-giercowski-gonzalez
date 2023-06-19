@@ -3,6 +3,7 @@
         <p>Menú </p>
         <div class="m1">
             <button *ngIf = "cs" (click)="cerrarSesion()" >Cerrar sesión</button>
+            <button *ngIf = "mas" routerLink="/mas">Más</button>
         </div>
         <div class="m1">
             <button *ngIf = "registro" class="botonIzquierda" routerLink="/register">Registrarse</button>
