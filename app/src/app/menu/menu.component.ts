@@ -11,13 +11,15 @@ export class MenuComponent {
   cs: Boolean
   alumnos: Boolean
   materias: Boolean
+  mas: Boolean
 
   constructor(private router: Router) {
     this.registro = true;
     this.login = true;
     this.cs = false;
     this.alumnos = false;
-    this.materias = false
+    this.materias = false;
+    this.mas = false;
 
   }
 
@@ -27,7 +29,8 @@ export class MenuComponent {
       this.login = false;
       this.cs = true;
       this.alumnos = true;
-      this.materias = true
+      this.materias = true;
+      this.mas = true;
     }
   }
 
